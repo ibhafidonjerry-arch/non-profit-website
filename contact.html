@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contact</title>
+    <link rel="stylesheet" href="C:\Users\hp\Desktop\non-profit\contact.css">
+</head>
+<body>
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Non-Profit</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="dropdownNav" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="dropdown-nav" id="dropdownNav">
+    <ul>
+      <li><a href="C:\Users\hp\Desktop\non-profit\nonprofit.html">Home</a></li>
+      <li><a href="C:\Users\hp\Desktop\non-profit\about.html">About</a></li>
+      <li><a href="C:\Users\hp\Desktop\non-profit\causes .html">Causes</a></li>
+      <li><a href="C:\Users\hp\Desktop\non-profit\impact.html">Impact</a></li>
+      <li><a href="C:\Users\hp\Desktop\non-profit\blog.html" class="nav-contact">Blog</a></li>
+    </ul>
+  </nav>
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('dropdownNav');
+    let previousScrollY = window.scrollY;
+
+    toggle.addEventListener('click', function () {
+      const isOpen = nav.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      const currentScrollY = window.scrollY;
+      const scrollingUp = currentScrollY < previousScrollY;
+
+      if (!header) return;
+
+      header.classList.toggle('header-scrolled', currentScrollY > 12 && scrollingUp);
+      if (currentScrollY <= 12) header.classList.remove('header-scrolled');
+
+      previousScrollY = currentScrollY;
+    }, { passive: true });
+  </script>
+  <header>
+    <div class="logo">
+        <img src="c:\Users\hp\Documents\assets (1)\img\favicon.png">
+        <h1>Non-Profit</h1>
+    </div>
+  </header>
+  <div class="home">
+    <div class="home-content">
+      <h2>contact</h2>
+     
+    </div>
+ </div>
+
+ <section class="contact-hero">
+  <div class="contact-info">
+    <p class="eyebrow">Get In Touch</p>
+    <h1>Contact Us</h1>
+    <p>Have a question or want to get involved? Reach out we'd love to hear from you.</p>
+
+    <ul class="contact-details">
+      <div class="contact-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <li><strong>Address:</strong> 200, A-block, Green road, USA</li>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-phone"></i>
+        <li><strong>Phone:</strong> +10 367 267 2678</li>
+      </div>
+      <div class="contact-item">
+        <i class="fa-solid fa-envelope"></i>
+        <li><strong>Email:</strong> hello@nonprofit.com</li>
+      </div>
+    </ul>
+  </div>
+
+  <form class="contact-form">
+    <div class="form-row">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required min="10" max="15">
+    </div>
+    <input type="text" name="subject" placeholder="Subject" required max="30">
+    <textarea name="message" rows="6" placeholder="Your Message" required max="100"></textarea>
+    </div>
+    <button type="submit" class="btn" >Send Message</button>
+  </form>
+ </section>
+
+
+
+  <div class="section-9">
+    <div class="section-9-card">
+      <h2>Become A Volunteer</h2>
+      <p>Inspires employees and organizations to support causes<br> they care about do this to bring more resources.</p>
+      <button><a href="">Join Now</a></button>
+
+    </div>
+
+  </div>
+
+
+</div>
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(window.ScrollTrigger);
+
+    const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    intro
+      .from('header .logo', { opacity: 0, y: -24, duration: 0.8 })
+      .from('.home-content h2', { opacity: 0, y: 36, rotateX: -18, duration: 0.9 }, '-=0.35')
+      .from('.home-content p', { opacity: 0, y: 24, duration: 0.7 }, '-=0.55')
+      .from('.home-content .hero-cta', { opacity: 0, y: 20, scale: 0.86, duration: 0.65 }, '-=0.4');
+
+    gsap.timeline({ repeat: -1, yoyo: true, delay: 0.4 })
+      .to('.home-content h2', {
+        y: -8,
+        duration: 0,
+        ease: 'sine.inOut'
+      })
+      .to('.home-content p', {
+        y: 6,
+        duration: 0,
+        ease: 'sine.inOut'
+      }, '<');
+
+   
+    gsap.to('.home', {
+      backgroundPosition: '50% 68%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.home',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    const home = document.querySelector('.home');
+    const homeContent = document.querySelector('.home-content');
+    const hasPointer = window.matchMedia('(pointer: fine)').matches;
+
+    if (home && homeContent && hasPointer) {
+      home.addEventListener('pointermove', (event) => {
+        const x = (event.clientX / window.innerWidth - 0.5) * 2;
+        const y = (event.clientY / window.innerHeight - 0.5) * 2;
+
+        gsap.to(homeContent, {
+          x: x * 14,
+          y: y * 10,
+          rotationY: x * 3,
+          rotationX: y * -2,
+          transformPerspective: 900,
+          duration: 0.7,
+          ease: 'power3.out',
+          overwrite: 'auto'
+        });
+      });
+
+      home.addEventListener('pointerleave', () => {
+        gsap.to(homeContent, {
+          x: 0,
+          y: 0,
+          rotationY: 0,
+          rotationX: 0,
+          duration: 0.9,
+          ease: 'elastic.out(1, 0.45)'
+        });
+      });
+    }
+
+    const revealTargets = gsap.utils.toArray(
+      '.case, .inbox, .section-2, .section-3, .services-grid > div, .section-5 .profile, .section-7 .profile, .section-9'
+    );
+
+    gsap.set(revealTargets, { autoAlpha: 0, y: 54 });
+    ScrollTrigger.batch(revealTargets, {
+      start: 'top 88%',
+      once: true,
+      onEnter: (batch) => gsap.to(batch, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.9,
+        stagger: 0.1,
+        ease: 'power3.out'
+      })
+    });
+
+    gsap.to('.profile-image-wrap img', {
+      yPercent: -7,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.section-2',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+
+    gsap.to('.section-9-card', {
+      scale: 1.08,
+      duration: 1.6,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
+
+    gsap.utils.toArray('.services-grid > div, .section-5 .profile, .section-7 .profile').forEach((card) => {
+      if (!hasPointer) return;
+
+      card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+        gsap.to(card, {
+          y: -10,
+          rotationY: x * 10,
+          rotationX: y * -10,
+          scale: 1.04,
+          transformPerspective: 800,
+          duration: 0.35,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+      });
+      card.addEventListener('pointerleave', () => gsap.to(card, {
+        y: 0,
+        rotationY: 0,
+        rotationX: 0,
+        scale: 1,
+        duration: 0.7,
+        ease: 'elastic.out(1, 0.5)'
+      }));
+    });
+  }
+ 
+</script>
+<footer>
+  <div class="footer-content">
+    <div class="footer-about">
+      <h2>Non-Profit</h2>
+      <p>Helping communities grow through care, education, and opportunity.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Explore</h3>
+      <a href="about.html">About Us</a>
+      <a href="causes .html">Our Causes</a>
+      <a href="impact.html">Our Impact</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <h3 id="contact">Get In Touch</h3>
+      <p class="footer-address">123 Hope Street<br>New York, NY 10001</p>
+      <a href="mailto:hello@nonprofit.org">hello@nonprofit.org</a>
+      <a href="tel:+1234567890">+1 234 567 890</a>
+      <div class="footer-socials" aria-label="Social media links">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <hr>
+    <p>&copy; 2026 Non-Profit. All rights reserved. Created by Jerry.</p>
+  </div>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+</footer>
+<script>
+  document.getElementById('backToTop').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(window.ScrollTrigger);
+
+    gsap.from('.footer-content > div', {
+      scrollTrigger: {
+        trigger: 'footer',
+        start: 'top 85%',
+        once: true
+      },
+      opacity: 0,
+      y: 35,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+
+    gsap.from('.footer-bottom hr, .footer-bottom p, .back-to-top', {
+      scrollTrigger: {
+        trigger: '.footer-bottom',
+        start: 'top 92%',
+        once: true
+      },
+      opacity: 0,
+      y: 18,
+      duration: 0.7,
+      stagger: 0.12,
+      ease: 'power2.out'
+    });
+  }
+</script>
+
+
+
+
+<script>
+  (function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !window.gsap || !window.ScrollTrigger) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---- Contact info: eyebrow, heading, intro text, each detail row ---- */
+  gsap.timeline({
+    scrollTrigger: { trigger: '.contact-hero', start: 'top 80%', once: true }
+  })
+    .from('.contact-info .eyebrow', { opacity: 0, y: 20, duration: 0.6, ease: 'power3.out' })
+    .from('.contact-info h1', { opacity: 0, y: 30, duration: 0.8, ease: 'power3.out' }, '-=0.35')
+    .from('.contact-info > p', { opacity: 0, y: 24, duration: 0.7, ease: 'power3.out' }, '-=0.5')
+    .from('.contact-item', { opacity: 0, x: -24, duration: 0.6, stagger: 0.12, ease: 'power3.out' }, '-=0.35');
+
+  /* ---- Contact form: panel + fields ---- */
+  gsap.timeline({
+    scrollTrigger: { trigger: '.contact-form', start: 'top 85%', once: true }
+  })
+    .from('.contact-form', { opacity: 0, y: 40, duration: 0.8, ease: 'power3.out' })
+    .from('.contact-form .form-row input, .contact-form > input, .contact-form textarea', {
+      opacity: 0,
+      y: 16,
+      duration: 0.5,
+      stagger: 0.08,
+      ease: 'power2.out'
+    }, '-=0.5')
+    .from('.contact-form .btn', { opacity: 0, y: 16, duration: 0.5, ease: 'power2.out' }, '-=0.2');
+
+  /* ---- Nice-to-have: subtle focus lift on inputs ---- */
+  const hasPointer = window.matchMedia('(pointer: fine)').matches;
+  if (hasPointer) {
+    document.querySelectorAll('.contact-form input, .contact-form textarea').forEach((field) => {
+      field.addEventListener('focus', () => gsap.to(field, {
+        scale: 1.015,
+        duration: 0.25,
+        ease: 'power2.out'
+      }));
+      field.addEventListener('blur', () => gsap.to(field, {
+        scale: 1,
+        duration: 0.3,
+        ease: 'power2.out'
+      }));
+    });
+  }
+})();
+</script>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Burger -->
+  <g id="burger" transform="translate(50, 60)">
+    <!-- Top bun -->
+    <ellipse cx="30" cy="10" rx="28" ry="12" fill="#D4A574"/>
+    <path d="M 2 10 Q 2 25 30 28 Q 58 25 58 10" fill="#E8C4A0"/>
+    
+    <!-- Sesame seeds -->
+    <circle cx="15" cy="8" r="2" fill="#F5DEB3"/>
+    <circle cx="25" cy="5" r="2" fill="#F5DEB3"/>
+    <circle cx="38" cy="7" r="2" fill="#F5DEB3"/>
+    <circle cx="48" cy="10" r="2" fill="#F5DEB3"/>
+    
+    <!-- Lettuce -->
+    <ellipse cx="30" cy="32" rx="28" ry="6" fill="#228B22"/>
+    
+    <!-- Cheese -->
+    <rect x="5" y="38" width="50" height="6" fill="#FFD700" rx="2"/>
+    
+    <!-- Patty -->
+    <ellipse cx="30" cy="50" rx="28" ry="8" fill="#8B4513"/>
+    
+    <!-- Bottom bun -->
+    <ellipse cx="30" cy="60" rx="28" ry="10" fill="#D4A574"/>
+    <ellipse cx="30" cy="68" rx="28" ry="6" fill="#E8C4A0"/>
+  </g>
+  
+  <!-- Soda Cup -->
+  <g id="soda" transform="translate(120, 50)">
+    <!-- Cup body -->
+    <path d="M 10 15 L 8 50 Q 8 55 13 55 L 37 55 Q 42 55 42 50 L 40 15 Z" fill="#DC143C"/>
+    
+    <!-- Cup highlight -->
+    <path d="M 15 20 L 13 50 Q 13 52 15 52 L 18 52 Q 20 52 20 50 L 22 20 Z" fill="#FF6B6B" opacity="0.6"/>
+    
+    <!-- Straw -->
+    <rect x="22" y="0" width="6" height="55" fill="#FF69B4"/>
+    <rect x="23" y="2" width="2" height="51" fill="#FF1493"/>
+    
+    <!-- Soda liquid inside -->
+    <ellipse cx="25" cy="40" rx="15" ry="4" fill="#8B0000" opacity="0.7"/>
+    
+    <!-- Ice/Bubbles -->
+    <circle cx="18" cy="30" r="3" fill="#87CEEB" opacity="0.6"/>
+    <circle cx="28" cy="35" r="2.5" fill="#87CEEB" opacity="0.6"/>
+    <circle cx="32" cy="25" r="2" fill="#87CEEB" opacity="0.6"/>
+    
+    <!-- Cup rim -->
+    <ellipse cx="25" cy="15" rx="16" ry="5" fill="#B22222"/>
+    <ellipse cx="25" cy="14" rx="16" ry="4" fill="#DC143C"/>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#FFD700" stroke-width="2" opacity="0.3"/>
+</svg>

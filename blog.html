@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Blog</title>
+<link rel="stylesheet" href="C:\Users\hp\Desktop\non-profit\design.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Source+Sans+3:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="dropdownNav" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <nav class="dropdown-nav" id="dropdownNav">
+    <ul>
+      <li><a href="C:\Users\hp\Desktop\non-profit\nonprofit.html">Home</a></li>
+      <li><a href="C:\Users\hp\Desktop\non-profit\about.html">About</a></li>
+      <li><a href="C:\Users\hp\Desktop\non-profit\causes .html">Causes</a></li>
+      <li><a href="C:\Users\hp\Desktop\non-profit\impact.html">Impact</a></li>
+      <li><a href="C:\Users\hp\Desktop\non-profit\blog.html">Blog</a></li>
+      <li><a class="nav-contact" href="C:\Users\hp\Desktop\non-profit\contact.html"><span>Contact</span><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></li>
+    </ul>
+  </nav>
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const nav = document.getElementById('dropdownNav');
+    let previousScrollY = window.scrollY;
+
+    toggle.addEventListener('click', function () {
+      const isOpen = nav.classList.toggle('open');
+      toggle.classList.toggle('open', isOpen);
+      toggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    window.addEventListener('scroll', function () {
+      const header = document.querySelector('header');
+      const currentScrollY = window.scrollY;
+      const scrollingUp = currentScrollY < previousScrollY;
+
+      if (!header) return;
+
+      header.classList.toggle('header-scrolled', currentScrollY > 12 && scrollingUp);
+      if (currentScrollY <= 12) header.classList.remove('header-scrolled');
+
+      previousScrollY = currentScrollY;
+    }, { passive: true });
+  </script>
+  <header>
+    <div class="logo">
+        <img src="c:\Users\hp\Documents\assets (1)\img\favicon.png">
+        <h1>Non-Profit</h1>
+    </div>
+  </header>
+  <div class="home">
+    <div class="home-content">
+      <h2>Blog</h2>
+    </div>
+  </div>
+
+
+  <main class="homeless-blog">
+
+    <!-- HERO SECTION -->
+    <section class="blog-hero">
+        <div class="hero-content">
+            <span class="blog-tag">Stories That Matter</span>
+
+            <h1>
+                Behind Every Homeless Person
+                <span>Is A Story</span>
+            </h1>
+
+            <p>
+                Homelessness is more than not having a house.
+                It is about people searching for safety, dignity,
+                food and another chance at life.
+            </p>
+
+            <a href="#stories" class="hero-btn">Explore Their Stories</a>
+        </div>
+
+        <div class="hero-image">
+            <img
+                src="c:\Users\hp\Downloads\khalil-radi-UP2aW5IBwes-unsplash.jpg"
+                alt="Helping homeless people"
+            >
+
+            <div class="image-card">
+                <h3>Hope Starts With Us</h3>
+                <p>
+                    Small acts of kindness can completely change
+                    someone's life.
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- INTRO SECTION -->
+    <section class="intro-section">
+        <div>
+            <span class="section-small-title">THE REALITY</span>
+
+            <h2>
+                Life Without A Place
+                <span>To Call Home</span>
+            </h2>
+        </div>
+
+        <p>
+            Millions of people around the world struggle every day
+            without stable housing. Some lost their jobs, some lost
+            their families, while others were affected by poverty,
+            disasters or difficult life situations.
+        </p>
+    </section>
+
+
+    <!-- FEATURED STORY -->
+    <section class="featured-story">
+
+        <div class="featured-image">
+            <img
+                src="c:\Users\hp\Downloads\jon-tyson-rbz1hVh7_LM-unsplash.jpg"
+                alt="Homeless person receiving support"
+            >
+
+            <span class="featured-label">Featured Story</span>
+        </div>
+
+        <div class="featured-content">
+            <span class="story-category">REAL LIFE STORY</span>
+
+            <h2>Finding Hope After Losing Everything</h2>
+
+            <p>
+                After months of living on the streets, James found
+                support from volunteers who provided food, clothing,
+                temporary shelter and guidance.
+            </p>
+
+            <p>
+                His story reminds us that sometimes a helping hand is
+                all someone needs to begin again.
+            </p>
+
+            <a href="#" class="read-btn">
+                Read Full Story
+                <span>→</span>
+            </a>
+        </div>
+
+    </section>
+
+
+    <!-- STORIES SECTION -->
+    <section class="stories-section" id="stories">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-small-title">LATEST STORIES</span>
+                <h2>Stories Of Hope</h2>
+            </div>
+
+            <p>
+                Discover stories showing how people and organizations
+                are helping homeless communities around the world.
+            </p>
+        </div>
+
+
+        <div class="story-grid">
+
+            <!-- CARD 1 -->
+            <article class="story-card">
+
+                <div class="story-image">
+                    <img
+                        src="c:\Users\hp\Downloads\khalil-radi-BlzrvWb1_vQ-unsplash.jpg"
+                        alt="Food being given to homeless people"
+                    >
+
+                    <span>Food Support</span>
+                </div>
+
+                <div class="story-info">
+                    <small>COMMUNITY SUPPORT</small>
+
+                    <h3>Providing Hot Meals To People On The Streets</h3>
+
+                    <p>
+                        Volunteers come together to prepare and distribute
+                        meals to people struggling with homelessness.
+                    </p>
+
+                    <a href="#">Read Story →</a>
+                </div>
+
+            </article>
+
+
+            <!-- CARD 2 -->
+            <article class="story-card">
+
+                <div class="story-image">
+                    <img
+                        src="c:\Users\hp\Downloads\ravi-sharma-HI872fhS_UQ-unsplash.jpg"
+                        alt="Homeless shelter"
+                    >
+
+                    <span>Shelter</span>
+                </div>
+
+                <div class="story-info">
+                    <small>SAFE HOMES</small>
+
+                    <h3>Creating Safe Places For People Without Homes</h3>
+
+                    <p>
+                        Temporary shelters provide security, warmth and
+                        support while people rebuild their lives.
+                    </p>
+
+                    <a href="#">Read Story →</a>
+                </div>
+
+            </article>
+
+
+            <!-- CARD 3 -->
+            <article class="story-card">
+
+                <div class="story-image">
+                    <img
+                        src="c:\Users\hp\Downloads\hanlin-sun-alhknt3gwCA-unsplash.jpg"
+                        alt="Volunteer helping homeless person"
+                    >
+
+                    <span>Volunteers</span>
+                </div>
+
+                <div class="story-info">
+                    <small>HELPING HANDS</small>
+
+                    <h3>Young Volunteers Bringing Hope To The Streets</h3>
+
+                    <p>
+                        From clothing to conversations, volunteers are
+                        showing that every person deserves care and dignity.
+                    </p>
+
+                    <a href="#">Read Story →</a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- QUOTE / MESSAGE SECTION -->
+    <section class="message-section">
+
+        <span>OUR MESSAGE</span>
+
+        <h2>
+            “No one should be invisible simply because
+            they do not have a home.”
+        </h2>
+
+        <p>
+            Awareness is the first step. Compassion is the next.
+            Together, communities can give people another chance.
+        </p>
+
+    </section>
+
+
+    <!-- MORE ARTICLES -->
+    <section class="more-stories">
+
+        <div class="section-heading">
+            <div>
+                <span class="section-small-title">MORE STORIES</span>
+                <h2>Changing Lives Together</h2>
+            </div>
+        </div>
+
+
+        <div class="article-list">
+
+            <article class="horizontal-card">
+
+                <img
+                    src="c:\Users\hp\Downloads\ronald-felton-ZhC0o83bSLU-unsplash.jpg"
+                    alt="Clothes being donated"
+                >
+
+                <div>
+                    <small>DONATIONS</small>
+
+                    <h3>How Clothing Donations Bring Comfort And Dignity</h3>
+
+                    <p>
+                        Clean clothing may seem simple, but it can restore
+                        confidence and dignity to someone going through
+                        difficult times.
+                    </p>
+
+                    <a href="#">Continue Reading →</a>
+                </div>
+
+            </article>
+
+
+            <article class="horizontal-card">
+
+                <img
+                    src="c:\Users\hp\Downloads\khalil-radi-V0_59FLQR34-unsplash.jpg"
+                    alt="Community helping homeless people"
+                >
+
+                <div>
+                    <small>COMMUNITY</small>
+
+                    <h3>Communities Working Together To Fight Homelessness</h3>
+
+                    <p>
+                        Local groups are proving that real change happens
+                        when people work together with compassion.
+                    </p>
+
+                    <a href="#">Continue Reading →</a>
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+
+  <div class="section-9">
+    <div class="section-9-card">
+      <h2>Become A Volunteer</h2>
+      <p>Inspires employees and organizations to support causes<br> they care about do this to bring more resources.</p>
+      <button><a href="">Join Now</a></button>
+
+    </div>
+
+  </div>
+
+
+</div>
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(window.ScrollTrigger);
+
+    const intro = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    intro
+      .from('header .logo', { opacity: 0, y: -24, duration: 0.8 })
+      .from('.home-content h2', { opacity: 0, y: 36, rotateX: -18, duration: 0.9 }, '-=0.35')
+      .from('.home-content p', { opacity: 0, y: 24, duration: 0.7 }, '-=0.55')
+      .from('.home-content .hero-cta', { opacity: 0, y: 20, scale: 0.86, duration: 0.65 }, '-=0.4');
+
+    gsap.timeline({ repeat: -1, yoyo: true, delay: 0.4 })
+      .to('.home-content h2', {
+        y: -8,
+        duration: 0,
+        ease: 'sine.inOut'
+      })
+      .to('.home-content p', {
+        y: 6,
+        duration: 0,
+        ease: 'sine.inOut'
+      }, '<');
+
+   
+    gsap.to('.home', {
+      backgroundPosition: '50% 68%',
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.home',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    });
+
+    const home = document.querySelector('.home');
+    const homeContent = document.querySelector('.home-content');
+    const hasPointer = window.matchMedia('(pointer: fine)').matches;
+
+    if (home && homeContent && hasPointer) {
+      home.addEventListener('pointermove', (event) => {
+        const x = (event.clientX / window.innerWidth - 0.5) * 2;
+        const y = (event.clientY / window.innerHeight - 0.5) * 2;
+
+        gsap.to(homeContent, {
+          x: x * 14,
+          y: y * 10,
+          rotationY: x * 3,
+          rotationX: y * -2,
+          transformPerspective: 900,
+          duration: 0.7,
+          ease: 'power3.out',
+          overwrite: 'auto'
+        });
+      });
+
+      home.addEventListener('pointerleave', () => {
+        gsap.to(homeContent, {
+          x: 0,
+          y: 0,
+          rotationY: 0,
+          rotationX: 0,
+          duration: 0.9,
+          ease: 'elastic.out(1, 0.45)'
+        });
+      });
+    }
+
+    const revealTargets = gsap.utils.toArray(
+      '.case, .inbox, .section-2, .section-3, .services-grid > div, .section-5 .profile, .section-7 .profile, .section-9'
+    );
+
+    gsap.set(revealTargets, { autoAlpha: 0, y: 54 });
+    ScrollTrigger.batch(revealTargets, {
+      start: 'top 88%',
+      once: true,
+      onEnter: (batch) => gsap.to(batch, {
+        autoAlpha: 1,
+        y: 0,
+        duration: 0.9,
+        stagger: 0.1,
+        ease: 'power3.out'
+      })
+    });
+
+    gsap.to('.profile-image-wrap img', {
+      yPercent: -7,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.section-2',
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1
+      }
+    });
+
+    gsap.to('.section-9-card', {
+      scale: 1.08,
+      duration: 1.6,
+      repeat: -1,
+      yoyo: true,
+      ease: 'sine.inOut'
+    });
+
+    gsap.utils.toArray('.services-grid > div, .section-5 .profile, .section-7 .profile').forEach((card) => {
+      if (!hasPointer) return;
+
+      card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+        gsap.to(card, {
+          y: -10,
+          rotationY: x * 10,
+          rotationX: y * -10,
+          scale: 1.04,
+          transformPerspective: 800,
+          duration: 0.35,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+      });
+      card.addEventListener('pointerleave', () => gsap.to(card, {
+        y: 0,
+        rotationY: 0,
+        rotationX: 0,
+        scale: 1,
+        duration: 0.7,
+        ease: 'elastic.out(1, 0.5)'
+      }));
+    });
+  }
+</script>
+<footer>
+  <div class="footer-content">
+    <div class="footer-about">
+      <h2>Non-Profit</h2>
+      <p>Helping communities grow through care, education, and opportunity.</p>
+    </div>
+    <div class="footer-links">
+      <h3>Explore</h3>
+      <a href="about.html">About Us</a>
+      <a href="causes .html">Our Causes</a>
+      <a href="impact.html">Our Impact</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-contact">
+      <h3 id="contact">Get In Touch</h3>
+      <p class="footer-address">123 Hope Street<br>New York, NY 10001</p>
+      <a href="mailto:hello@nonprofit.org">hello@nonprofit.org</a>
+      <a href="tel:+1234567890">+1 234 567 890</a>
+      <div class="footer-socials" aria-label="Social media links">
+        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <hr>
+    <p>&copy; 2026 Non-Profit. All rights reserved. Created by Jerry.</p>
+  </div>
+  <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+    <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+  </button>
+</footer>
+<script>
+  document.getElementById('backToTop').addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(window.ScrollTrigger);
+
+    gsap.from('.footer-content > div', {
+      scrollTrigger: {
+        trigger: 'footer',
+        start: 'top 85%',
+        once: true
+      },
+      opacity: 0,
+      y: 35,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out'
+    });
+
+    gsap.from('.footer-bottom hr, .footer-bottom p, .back-to-top', {
+      scrollTrigger: {
+        trigger: '.footer-bottom',
+        start: 'top 92%',
+        once: true
+      },
+      opacity: 0,
+      y: 18,
+      duration: 0.7,
+      stagger: 0.12,
+      ease: 'power2.out'
+    });
+  }
+</script>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+
+<script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+/* =================================
+   HERO ANIMATION
+================================= */
+
+gsap.from(".blog-tag", {
+    y: 25,
+    duration: 0.6,
+    ease: "power2.out"
+});
+
+gsap.from(".hero-content h1", {
+    y: 45,
+    duration: 1,
+    delay: 0.1,
+    ease: "power3.out"
+});
+
+gsap.from(".hero-content p", {
+    y: 25,
+    duration: 0.8,
+    delay: 0.3,
+    ease: "power2.out"
+});
+
+gsap.from(".hero-btn", {
+    y: 20,
+    duration: 0.7,
+    delay: 0.5,
+    ease: "power2.out"
+});
+
+gsap.from(".hero-image", {
+    x: 60,
+    duration: 1,
+    delay: 0.2,
+    ease: "power3.out"
+});
+
+
+/* =================================
+   SCROLL ANIMATIONS
+================================= */
+
+gsap.utils.toArray(
+    ".intro-section, .featured-story, .message-section"
+).forEach(function(section) {
+
+    gsap.from(section, {
+
+        y: 60,
+
+        duration: 1,
+
+        ease: "power3.out",
+
+        scrollTrigger: {
+            trigger: section,
+            start: "top 85%"
+        }
+
+    });
+
+});
+
+
+/* =================================
+   STORY CARDS
+================================= */
+
+gsap.from(".story-card", {
+
+    y: 50,
+
+    duration: 0.8,
+
+    stagger: 0.15,
+
+    ease: "power3.out",
+
+    scrollTrigger: {
+        trigger: ".story-grid",
+        start: "top 85%"
+    }
+
+});
+
+
+/* =================================
+   MORE STORIES
+================================= */
+
+gsap.from(".horizontal-card", {
+
+    y: 50,
+
+    duration: 0.8,
+
+    stagger: 0.15,
+
+    ease: "power3.out",
+
+    scrollTrigger: {
+        trigger: ".article-list",
+        start: "top 85%"
+    }
+
+});
+
+
+/* =================================
+   STORY FILTER
+================================= */
+
+const filterButtons =
+    document.querySelectorAll(".filter-btn");
+
+const storyCards =
+    document.querySelectorAll(".story-card");
+
+
+filterButtons.forEach(function(button) {
+
+    button.addEventListener("click", function() {
+
+        const filter =
+            button.getAttribute("data-filter");
+
+
+        /* Active button */
+
+        filterButtons.forEach(function(btn) {
+            btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+
+        /* Filter cards */
+
+        storyCards.forEach(function(card) {
+
+            const category =
+                card.getAttribute("data-category");
+
+
+            if (
+                filter === "all" ||
+                category === filter
+            ) {
+
+                gsap.to(card, {
+                    scale: 1,
+                    opacity: 1,
+                    duration: 0.3
+                });
+
+                card.style.display = "block";
+
+            } else {
+
+                gsap.to(card, {
+                    scale: 0.8,
+                    opacity: 0,
+                    duration: 0.2,
+
+                    onComplete: function() {
+                        card.style.display = "none";
+                    }
+                });
+
+            }
+
+        });
+
+    });
+
+});
+
+
+/* =================================
+   STORY MODAL
+================================= */
+
+const modal =
+    document.getElementById("storyModal");
+
+const closeModal =
+    document.getElementById("closeModal");
+
+const modalTitle =
+    document.getElementById("modalTitle");
+
+const modalText =
+    document.getElementById("modalText");
+
+const modalCategory =
+    document.getElementById("modalCategory");
+
+
+const storyLinks =
+    document.querySelectorAll(".story-link");
+
+
+storyLinks.forEach(function(link) {
+
+    link.addEventListener("click", function(event) {
+
+        event.preventDefault();
+
+
+        const card =
+            link.closest(".story-card");
+
+
+        const title =
+            card.querySelector("h3").textContent;
+
+
+        const category =
+            card.querySelector("small").textContent;
+
+
+        const paragraph =
+            card.querySelector("p").textContent;
+
+
+        modalTitle.textContent = title;
+
+        modalCategory.textContent = category;
+
+        modalText.textContent =
+            paragraph +
+            " This story reminds us that compassion, support and community can help people find a path toward a better future.";
+
+
+        modal.classList.add("show");
+
+
+        gsap.from(".modal-box", {
+
+            y: 40,
+            scale: 0.95,
+
+            duration: 0.4,
+
+            ease: "power3.out"
+
+        });
+
+    });
+
+});
+
+
+/* =================================
+   CLOSE MODAL
+================================= */
+
+closeModal.addEventListener("click", function() {
+
+    modal.classList.remove("show");
+
+});
+
+
+/* Close when clicking outside */
+
+modal.addEventListener("click", function(event) {
+
+    if (event.target === modal) {
+
+        modal.classList.remove("show");
+
+    }
+
+});
+
+
+/* Close with ESC */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        modal.classList.remove("show");
+
+    }
+
+});
+
+</script>
+
+<script>
+    (function () {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !window.gsap || !window.ScrollTrigger) return;
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  /* ---- Hero ---- */
+  gsap.timeline({ defaults: { ease: 'power3.out' } })
+    .from('.blog-tag', { opacity: 0, y: 25, duration: 0.6 })
+    .from('.hero-content h1', { opacity: 0, y: 45, duration: 1 }, '-=0.35')
+    .from('.hero-content p', { opacity: 0, y: 25, duration: 0.8 }, '-=0.55')
+    .from('.hero-btn', { opacity: 0, y: 20, duration: 0.7 }, '-=0.45')
+    .from('.hero-image', { opacity: 0, x: 60, duration: 1 }, '-=0.9')
+    .from('.hero-image .image-card', { opacity: 0, y: 20, duration: 0.6 }, '-=0.3');
+
+  /* ---- Intro / message sections: simple fade-up on scroll ---- */
+  gsap.utils.toArray('.intro-section, .message-section').forEach((section) => {
+    gsap.from(section, {
+      opacity: 0,
+      y: 60,
+      duration: 1,
+      ease: 'power3.out',
+      scrollTrigger: { trigger: section, start: 'top 85%', once: true }
+    });
+  });
+
+  /* ---- Featured story: image and text from opposite sides ---- */
+  gsap.timeline({
+    scrollTrigger: { trigger: '.featured-story', start: 'top 78%', once: true }
+  })
+    .from('.featured-image', { opacity: 0, x: -50, duration: 0.9, ease: 'power3.out' })
+    .from('.featured-content > *', { opacity: 0, x: 40, duration: 0.7, stagger: 0.1, ease: 'power3.out' }, '-=0.6');
+
+  /* ---- Story cards: stagger reveal + pointer tilt ---- */
+  const storyCards = gsap.utils.toArray('.story-card');
+  gsap.set(storyCards, { opacity: 0, y: 50 });
+
+  ScrollTrigger.batch(storyCards, {
+    start: 'top 88%',
+    once: true,
+    onEnter: (batch) => gsap.to(batch, {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      stagger: 0.15,
+      ease: 'power3.out'
+    })
+  });
+
+  const hasPointer = window.matchMedia('(pointer: fine)').matches;
+  if (hasPointer) {
+    storyCards.forEach((card) => {
+      card.addEventListener('pointermove', (event) => {
+        const bounds = card.getBoundingClientRect();
+        const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+        const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+
+        gsap.to(card, {
+          y: -8,
+          rotationY: x * 8,
+          rotationX: y * -8,
+          scale: 1.03,
+          transformPerspective: 800,
+          duration: 0.35,
+          ease: 'power2.out',
+          overwrite: 'auto'
+        });
+      });
+      card.addEventListener('pointerleave', () => gsap.to(card, {
+        y: 0,
+        rotationY: 0,
+        rotationX: 0,
+        scale: 1,
+        duration: 0.7,
+        ease: 'elastic.out(1, 0.5)'
+      }));
+    });
+  }
+
+  /* ---- More stories: horizontal cards, stagger + alternating slide direction ---- */
+  const horizontalCards = gsap.utils.toArray('.horizontal-card');
+  ScrollTrigger.batch(horizontalCards, {
+    start: 'top 88%',
+    once: true,
+    onEnter: (batch) => batch.forEach((card, i) => {
+      gsap.from(card, {
+        opacity: 0,
+        x: i % 2 === 0 ? -50 : 50,
+        duration: 0.9,
+        ease: 'power3.out'
+      });
+    })
+  });
+})();
+</script>
+
+
+
+
+ 
+
+</body>
+</html>
