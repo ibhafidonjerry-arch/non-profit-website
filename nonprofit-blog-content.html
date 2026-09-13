@@ -1,0 +1,305 @@
+<!-- ============================================================
+  NONPROFIT BLOG CONTENT BLOCK — no header/footer, no outbound links.
+  White background, dark red used only for accents/buttons.
+  Drop this straight inside your existing page layout.
+
+  TO SWAP IMAGES:
+  Replace the src="..." on the two <img> tags below
+  (search for "REPLACE IMAGE 1" and "REPLACE IMAGE 2").
+  They're plain placeholder blocks right now, so nothing
+  external loads until you swap them.
+============================================================= -->
+
+<style>
+  .post {
+    --bg: #ffffff;
+    --surface: #fbf3f3;
+    --red: #7a1620;
+    --red-bright: #9c1c28;
+    --ink: #201414;
+    --muted: #7a6a68;
+
+    background: var(--bg);
+    color: var(--ink);
+    font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', serif;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+    line-height: 1.7;
+  }
+
+  .post * { box-sizing: border-box; }
+
+  .post .eyebrow-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--muted);
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .post .eyebrow-line .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--red);
+    flex-shrink: 0;
+  }
+
+  .post h1 {
+    font-size: 40px;
+    line-height: 1.18;
+    font-weight: 600;
+    margin: 0 0 18px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .post .dek {
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    color: var(--muted);
+    margin: 0 0 36px;
+    line-height: 1.6;
+  }
+
+  .post .hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+    border: 1px solid #eee0df;
+  }
+
+  .post .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .post .caption {
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0 0 40px;
+  }
+
+  .post p {
+    font-size: 18px;
+    color: var(--ink);
+    margin: 0 0 24px;
+  }
+
+  .post h2 {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--ink);
+    margin: 48px 0 18px;
+    padding-top: 20px;
+    border-top: 1px solid #f0dede;
+  }
+
+  .post blockquote {
+    margin: 36px 0;
+    padding: 4px 0 4px 24px;
+    border-left: 3px solid var(--red);
+    font-size: 22px;
+    font-style: italic;
+    color: var(--ink);
+    background: var(--surface);
+    padding: 20px 24px;
+    border-radius: 4px;
+  }
+
+  .post .inline-image {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 36px 0 12px;
+    border: 1px solid #eee0df;
+  }
+
+  .post .inline-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .post .stats-row {
+    display: flex;
+    gap: 32px;
+    margin: 40px 0;
+    padding: 24px;
+    background: var(--surface);
+    border-radius: 6px;
+  }
+
+  .post .stats-row .stat {
+    flex: 1;
+  }
+
+  .post .stats-row .stat .num {
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--red);
+    display: block;
+  }
+
+  .post .stats-row .stat .label {
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .post .cta-box {
+    margin: 48px 0 16px;
+    padding: 32px;
+    background: var(--surface);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .post .cta-box p {
+    font-size: 17px;
+    margin-bottom: 20px;
+  }
+
+  .post .cta-button {
+    display: inline-block;
+    background: var(--red);
+    color: #ffffff;
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .post .cta-button:hover {
+    background: var(--red-bright);
+  }
+
+  .post .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #f0dede;
+  }
+
+  .post .tags span {
+    font-family: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    color: var(--red);
+    background: var(--surface);
+    border: 1px solid #f0dede;
+    padding: 6px 12px;
+    border-radius: 100px;
+  }
+</style>
+
+<article class="post">
+
+  <div class="eyebrow-line">
+    <span class="dot"></span>
+    <span>Community Stories · 5 min read</span>
+  </div>
+
+  <h1>A Backpack, a Bus Fare, and a Chance to Show Up</h1>
+  <p class="dek">
+    For a lot of the kids in our after-school program, the biggest
+    obstacle to an education isn't ability. It's whether they can afford
+    to get in the room in the first place.
+  </p>
+
+  <div class="hero-image">
+    <!-- REPLACE IMAGE 1: swap this src with your own hero image -->
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'%3E%3Crect width='800' height='500' fill='%23fbf3f3'/%3E%3Crect x='0' y='0' width='800' height='500' fill='none' stroke='%23f0dede' stroke-width='2'/%3E%3Ctext x='400' y='240' font-family='Georgia, serif' font-size='20' fill='%237a6a68' text-anchor='middle'%3EReplace with your hero image%3C/text%3E%3Ctext x='400' y='270' font-family='Georgia, serif' font-size='14' fill='%237a1620' text-anchor='middle'%3E800 x 500 suggested%3C/text%3E%3C/svg%3E" alt="Hero placeholder — replace with your own image">
+  </div>
+  <p class="caption">Photo placeholder — swap the src attribute above.</p>
+
+  <p>
+    Amara used to miss school two, sometimes three days a week. Not
+    because she didn't want to be there, but because bus fare competed
+    with dinner, and dinner usually won. By the time she found her way
+    to our doors, she'd already decided school "just wasn't for her."
+  </p>
+
+  <p>
+    It wasn't a lack of ability holding her back. It was logistics —
+    the quiet, unglamorous kind of poverty that doesn't make headlines
+    but decides, day by day, who gets to show up and who doesn't.
+  </p>
+
+  <div class="stats-row">
+    <div class="stat">
+      <span class="num">240+</span>
+      <span class="label">Students supported this year</span>
+    </div>
+    <div class="stat">
+      <span class="num">89%</span>
+      <span class="label">Improved attendance</span>
+    </div>
+    <div class="stat">
+      <span class="num">12</span>
+      <span class="label">Partner communities</span>
+    </div>
+  </div>
+
+  <h2>What "support" actually looks like</h2>
+
+  <p>
+    It's rarely one big gesture. It's a bus pass covered for the month.
+    A hot meal before homework starts. A tutor who remembers your name
+    and asks how your little brother is doing. Small, repeated acts of
+    showing up for someone until they start showing up for themselves.
+  </p>
+
+  <blockquote>
+    We're not trying to fix a child. We're trying to remove the things
+    standing between her and her own potential.
+  </blockquote>
+
+  <p>
+    Six months in, Amara hasn't missed a single session. She's tutoring
+    a younger student now, walking her through the same fractions
+    someone once walked her through. That's the part of the work that
+    doesn't show up in a spreadsheet, but it's the whole point.
+  </p>
+
+  <div class="inline-image">
+    <!-- REPLACE IMAGE 2: swap this src with a second image -->
+    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'%3E%3Crect width='600' height='400' fill='%23fbf3f3'/%3E%3Crect x='0' y='0' width='600' height='400' fill='none' stroke='%23f0dede' stroke-width='2'/%3E%3Ctext x='300' y='190' font-family='Georgia, serif' font-size='18' fill='%237a6a68' text-anchor='middle'%3EReplace with a second image%3C/text%3E%3Ctext x='300' y='218' font-family='Georgia, serif' font-size='13' fill='%237a1620' text-anchor='middle'%3E600 x 400 suggested%3C/text%3E%3C/svg%3E" alt="Second placeholder — replace with your own image">
+  </div>
+
+  <h2>Why this keeps us going</h2>
+
+  <p>
+    Every kid we work with is proof of the same idea: given a fair
+    starting line, most of the "gap" everyone talks about closes on its
+    own. Our job isn't to do the running for them. It's to make sure
+    they actually get to the starting line at all.
+  </p>
+
+  <div class="cta-box">
+    <p>Your support covers a bus pass, a meal, or a tutoring hour — pick what fits.</p>
+    <button class="cta-button" type="button">Support a Student</button>
+  </div>
+
+  <div class="tags">
+    <span>Education</span>
+    <span>Community</span>
+    <span>Youth Programs</span>
+  </div>
+
+</article>
